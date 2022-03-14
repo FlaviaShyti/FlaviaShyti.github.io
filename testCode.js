@@ -78,3 +78,4 @@ function changeCanvasColor(){
   drawCloud();
   drawCaption();
   drawGrass();
+  

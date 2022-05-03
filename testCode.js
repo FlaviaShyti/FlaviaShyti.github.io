@@ -55,15 +55,8 @@ function changeCanvasColor(){
       
   }
   function drawGrass(){
-      //context.beginPath();
-      //context.moveTo(0, 400);
-      //context.lineTo(10, 400);
-      //context.lineTo(5, 350);
-      //context.fill();
       startX=0;
       startY=400;
-      //context.beginPath();
-      //context.moveTo(startX,startY);
       for(let i=0;i<100;i++){
           context.beginPath();
           context.moveTo(startX, startY);
@@ -78,4 +71,8 @@ function changeCanvasColor(){
   drawCloud();
   drawCaption();
   drawGrass();
+//Homework 2
+var canvas2=document.getElementById("hw2Canvas");
+var context2=hw2Canvas.getContext("2d");
+  
   

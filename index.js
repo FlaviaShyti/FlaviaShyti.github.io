@@ -97,14 +97,27 @@ function drawHouse(){
     context.fill();
     //window
     context.fillStyle='cyan';
-    context.strokeRect(startX+130,200,75,90);
-    context.fillRect(startX+130,200, 75,90);
-
-    context.fillStyle='black';
+    var windowStartX=startX+130;
+    var windowStartY=200;
+    var windowWidth=75;
+    var windowHeight=90;
+    context.strokeRect(windowStartX,windowStartY,windowWidth,windowHeight);
+    context.fillRect(windowStartX,windowStartY, windowWidth,windowHeight);
+    
+    context.strokeStyle='gray';
+    context.lineWidth=2.5;
     context.beginPath();
-    context.moveTo(startX+130,200);
-    context.lineTo(startX+130,280);
-
+    var windowPaneStartX=windowStartX+(windowWidth/2);
+    var windowHeightY=windowStartY+windowHeight;
+    var halfWindowHeightY=windowStartY+(windowHeight/2);
+    var windowPaneEndX= windowStartX+windowWidth;
+    context.moveTo(windowPaneStartX,windowStartY);
+    context.lineTo(windowPaneStartX,windowHeightY);
+    context.stroke();
+    context.beginPath();
+    context.moveTo(windowStartX,halfWindowHeightY);
+    context.lineTo(windowPaneEndX,halfWindowHeightY);
+    context.stroke();
 }
 
  changeCanvasColor();
@@ -131,3 +144,5 @@ function drawHouse(){
         context.drawImage(imageOfGround,0,380);
     }
 }
+// HOMEWORK 2
+

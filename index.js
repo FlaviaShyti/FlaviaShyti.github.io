@@ -107,10 +107,27 @@ function drawHouse(){
 
 }
 
- 
  changeCanvasColor();
  drawSun();
  drawCloud();
  drawCaption();
  drawGrass();
  drawHouse();
+ window.onload=function(){
+    var imageOfSprite=new Image();
+    var imageOfGround=new Image();
+    imageOfSprite.src='file:///C:/Users/Tristan/Documents/GitHub/FlaviaShyti.github.io/sprite.png';
+    imageOfGround.src='file:///C:/Users/Tristan/Documents/GitHub/FlaviaShyti.github.io/ground.jpeg';
+    imageOfGround.onload=function(){
+        fill_canvas(imageOfSprite,imageOfGround);
+    }
+    function fill_canvas(imageOfSprite,imageOfGround){
+        imageOfSprite.width=100;
+        imageOfSprite.height=150;
+
+        imageOfGround.width=600;
+        imageOfGround.height=20;
+        context.drawImage(imageOfSprite, 0,195);
+        context.drawImage(imageOfGround,0,380);
+    }
+}

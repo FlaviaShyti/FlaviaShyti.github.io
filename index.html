@@ -1,225 +1,317 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="myStyle.css">
-    <title>
-      Flavia Shyti CISC3610
-    </title>
-  </head>
-  <body>
-    <nav class="navbar background">
-      <ul class="nav-list">
-        <div class="logo">
-          <img src="finallogo.PNG" class="center">
-        </div>
-        <a href="labs.html">Labs</a>
-      </ul>
-    </nav>
-    <section class="Homework-Section">
-      <div class="box-main">
-        <div class="firstHalf">
-          <h1 class="text-big" id="web">Homework 1</h1>
-          <p class="text-small">
-            This is where Homework 1 goes.
-          </p>
-        </div>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link rel="stylesheet" href="myStyle.css">
+  <title>
+    Flavia Shyti CISC3610
+  </title>
+</head>
+
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo">
+        <img src="finallogo.PNG" class="center">
       </div>
-      <div class="hw-1-container">
-        <div id="myCanvasDIV">
-          <canvas id="myCanvas" width="700" height="400" style="border:1px solid #000000"></canvas>
+      <a href="labs.html">Labs</a>
+    </ul>
+  </nav>
+  <section class="Homework-Section">
+    <div class="box-main">
+      <div class="firstHalf">
+        <h1 class="text-big" id="web">Homework 1</h1>
+        <p class="text-small">
+          This is where Homework 1 goes.
+        </p>
+      </div>
+    </div>
+    <div class="hw-1-container">
+      <div id="myCanvasDIV">
+        <canvas id="myCanvas" width="700" height="400" style="border:1px solid #000000"></canvas>
       </div>
       <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = "#99FFFF";
-        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         //cloud
-        window.onload = function(){
-            var canvas = document.getElementById("myCanvas");
-            var context = canvas.getContext("2d");
-    
-    
-            //drawing sun
-            var x=60;
-            var y=60;
-            var radius =50;
-            var startAngle=0;
-            var endAngle=2*Math.PI;
-            var counterClockwise = false;
-            context.beginPath();
-            context.arc(x,y,radius,startAngle,endAngle,counterClockwise);
-            context.lineWidth=10;
-            context.fillStyle="yellow";
-            context.strokeStyle="yellow";
-            context.fill();
-            context.stroke();
-    
-    
-    
-                    
-            var startX = 200;
-            var startY = 50;
-                    
-            // draw cloud shape
-            context.beginPath();
-            context.moveTo(startX, startY);
-            context.bezierCurveTo(startX - 40, startY + 20, startX - 40, startY + 70, startX + 60, startY + 70);//left most shape
-            context.bezierCurveTo(startX + 80, startY + 100, startX + 150, startY + 100, startX + 170, startY + 70);//bottom center
-            context.bezierCurveTo(startX + 250, startY + 70, startX + 250, startY + 40, startX + 220, startY + 20);//bottom right 
-            context.bezierCurveTo(startX + 260, startY - 40, startX + 200, startY - 50, startX + 170, startY - 30);//top right
-            context.bezierCurveTo(startX + 210, startY - 40, startX + 80, startY - 60, startX + 80, startY - 30);//top center
-            context.bezierCurveTo(startX + 30, startY - 50, startX - 20, startY - 60, startX, startY);//top left
-            context.closePath();
-                    
-            context.fillStyle = "#FEFDFB";
-            context.fill();
-        
-            context.lineWidth = 5;
-            context.strokeStyle = "#FFFFFF";
-            context.stroke();
-    
-    
-            //Write text
-            context.fillStyle="purple";
-            context.font="20px Verdana";
-            context.fillText("My First Cartoon", startX+20, startY+20);
-    
-            // Green floor
-            context.beginPath();
-            context.lineWidth = "4";
-            context.strokeStyle = "green";
-            context.fillStyle="#4CA843";
-            context.rect(0, 350, 700, 50);
-            context.stroke();
-            context.fill();
-    
-    
-            //draw house outline
-            context.beginPath();
-            context.lineWidth = "4";
-            context.strokeStyle = "#faebd7";
-            context.fillStyle="#faebd7";
-            context.rect(450, 120, 245, 230);
-            context.stroke();
-            context.fill();
-    
-            //draw roof
-            context.beginPath();
-            context.strokeStyle="#c6b5a1";
-            context.fillStyle="#C6B5A1";
-            context.moveTo(450,120);
-            context.lineTo(572,25);
-            context.lineTo(695,120);
-            context.lineTo(450,120);
-            context.stroke();
-            context.fill();
-    
-            //draw window
-            context.beginPath();
-            context.lineWidth = "4";
-            context.strokeStyle = "#FFFFFF";
-            context.fillStyle="#FFFFFF";
-            context.rect(470, 150, 70, 70);
-            context.stroke();
-            context.fill();
-    
-            
-            //draw window panes using for loop
-            context.beginPath();
-            context.lineWidth = "4";
-            context.strokeStyle = "#000000";
-            context.fillStyle="#000000";
-            var paneX=480;
-            var paneY=160;
-            var paneDimension=20;
-            //draw first column, then just repeat and move paneX over by 30
-            for(let i=0;i<2;i++){
-                for(let j=0;j<2;j++){
-                context.rect(paneX, paneY, paneDimension, paneDimension);
-                context.stroke();
-                context.fill();
-                paneY+=30;
-                }
-                paneY=160
-                paneX+=30;
+        window.onload = function () {
+          var canvas = document.getElementById("myCanvas");
+          var context = canvas.getContext("2d");
+
+
+          //drawing sun
+          var x = 60;
+          var y = 60;
+          var radius = 50;
+          var startAngle = 0;
+          var endAngle = 2 * Math.PI;
+          var counterClockwise = false;
+          context.beginPath();
+          context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+          context.lineWidth = 10;
+          context.fillStyle = "yellow";
+          context.strokeStyle = "yellow";
+          context.fill();
+          context.stroke();
+
+
+
+
+          var startX = 200;
+          var startY = 50;
+
+          // draw cloud shape
+          context.beginPath();
+          context.moveTo(startX, startY);
+          context.bezierCurveTo(startX - 40, startY + 20, startX - 40, startY + 70, startX + 60, startY + 70);//left most shape
+          context.bezierCurveTo(startX + 80, startY + 100, startX + 150, startY + 100, startX + 170, startY + 70);//bottom center
+          context.bezierCurveTo(startX + 250, startY + 70, startX + 250, startY + 40, startX + 220, startY + 20);//bottom right 
+          context.bezierCurveTo(startX + 260, startY - 40, startX + 200, startY - 50, startX + 170, startY - 30);//top right
+          context.bezierCurveTo(startX + 210, startY - 40, startX + 80, startY - 60, startX + 80, startY - 30);//top center
+          context.bezierCurveTo(startX + 30, startY - 50, startX - 20, startY - 60, startX, startY);//top left
+          context.closePath();
+
+          context.fillStyle = "#FEFDFB";
+          context.fill();
+
+          context.lineWidth = 5;
+          context.strokeStyle = "#FFFFFF";
+          context.stroke();
+
+
+          //Write text
+          context.fillStyle = "purple";
+          context.font = "20px Verdana";
+          context.fillText("My First Cartoon", startX + 20, startY + 20);
+
+          // Green floor
+          context.beginPath();
+          context.lineWidth = "4";
+          context.strokeStyle = "green";
+          context.fillStyle = "#4CA843";
+          context.rect(0, 350, 700, 50);
+          context.stroke();
+          context.fill();
+
+
+          //draw house outline
+          context.beginPath();
+          context.lineWidth = "4";
+          context.strokeStyle = "#faebd7";
+          context.fillStyle = "#faebd7";
+          context.rect(450, 120, 245, 230);
+          context.stroke();
+          context.fill();
+
+          //draw roof
+          context.beginPath();
+          context.strokeStyle = "#c6b5a1";
+          context.fillStyle = "#C6B5A1";
+          context.moveTo(450, 120);
+          context.lineTo(572, 25);
+          context.lineTo(695, 120);
+          context.lineTo(450, 120);
+          context.stroke();
+          context.fill();
+
+          //draw window
+          context.beginPath();
+          context.lineWidth = "4";
+          context.strokeStyle = "#FFFFFF";
+          context.fillStyle = "#FFFFFF";
+          context.rect(470, 150, 70, 70);
+          context.stroke();
+          context.fill();
+
+
+          //draw window panes using for loop
+          context.beginPath();
+          context.lineWidth = "4";
+          context.strokeStyle = "#000000";
+          context.fillStyle = "#000000";
+          var paneX = 480;
+          var paneY = 160;
+          var paneDimension = 20;
+          //draw first column, then just repeat and move paneX over by 30
+          for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 2; j++) {
+              context.rect(paneX, paneY, paneDimension, paneDimension);
+              context.stroke();
+              context.fill();
+              paneY += 30;
             }
-    
-            //Draw door
-            context.beginPath();
-            context.lineWidth = "4";
-            context.strokeStyle = "#663300";
-            context.fillStyle="#663300";
-            context.rect(600, 199, 70, 150);
-            context.stroke();
-            context.fill();
-    
-            //draw door handle
-            context.beginPath();
-            context.arc(662,280,3,startAngle,endAngle,counterClockwise);
-            context.lineWidth=10;
-            context.fillStyle="black";
-            context.strokeStyle="black";
-            context.fill();
-            context.stroke();
-    
-            //cloud
-            var startX = 0;
-            var startY = 350;
-            for(let j=0;j<4;j++){
-                for(let i=0;i<30;i++){
-                    context.beginPath();
-                    context.moveTo(startX, startY);
-                    context.bezierCurveTo(startX - 4, startY + 2, startX - 4, startY + 7, startX + 6, startY + 7);//left most shape
-                    context.bezierCurveTo(startX + 8, startY + 10, startX + 15, startY + 10, startX + 17, startY + 7);//bottom center
-                    context.bezierCurveTo(startX + 25, startY + 7, startX + 25, startY + 4, startX + 22, startY + 2);//bottom right 
-                    context.bezierCurveTo(startX + 26, startY - 4, startX + 20, startY - 5, startX + 17, startY - 3);//top right
-                    context.bezierCurveTo(startX + 21, startY - 4, startX + 8, startY - 6, startX + 8, startY - 3);//top center
-                    context.bezierCurveTo(startX + 3, startY - 5, startX - 2, startY - 6, startX, startY);//top left
-                    context.closePath();
-                    
-                    context.fillStyle = "#928e85";
-                    context.fill();
-        
-                    context.lineWidth = 5;
-                    context.strokeStyle = "#FFFFFF";
-                    context.stroke();
-                    startX+=25;
-                }
-                startX=0;
-                startY+=20;
+            paneY = 160
+            paneX += 30;
+          }
+
+          //Draw door
+          context.beginPath();
+          context.lineWidth = "4";
+          context.strokeStyle = "#663300";
+          context.fillStyle = "#663300";
+          context.rect(600, 199, 70, 150);
+          context.stroke();
+          context.fill();
+
+          //draw door handle
+          context.beginPath();
+          context.arc(662, 280, 3, startAngle, endAngle, counterClockwise);
+          context.lineWidth = 10;
+          context.fillStyle = "black";
+          context.strokeStyle = "black";
+          context.fill();
+          context.stroke();
+
+          //cloud
+          var startX = 0;
+          var startY = 350;
+          for (let j = 0; j < 4; j++) {
+            for (let i = 0; i < 30; i++) {
+              context.beginPath();
+              context.moveTo(startX, startY);
+              context.bezierCurveTo(startX - 4, startY + 2, startX - 4, startY + 7, startX + 6, startY + 7);//left most shape
+              context.bezierCurveTo(startX + 8, startY + 10, startX + 15, startY + 10, startX + 17, startY + 7);//bottom center
+              context.bezierCurveTo(startX + 25, startY + 7, startX + 25, startY + 4, startX + 22, startY + 2);//bottom right 
+              context.bezierCurveTo(startX + 26, startY - 4, startX + 20, startY - 5, startX + 17, startY - 3);//top right
+              context.bezierCurveTo(startX + 21, startY - 4, startX + 8, startY - 6, startX + 8, startY - 3);//top center
+              context.bezierCurveTo(startX + 3, startY - 5, startX - 2, startY - 6, startX, startY);//top left
+              context.closePath();
+
+              context.fillStyle = "#928e85";
+              context.fill();
+
+              context.lineWidth = 5;
+              context.strokeStyle = "#FFFFFF";
+              context.stroke();
+              startX += 25;
             }
+            startX = 0;
+            startY += 20;
+          }
         };
-    </script>
+      </script>
+    </div>
+  </section>
+  <section class="Homework-Section">
+    <div class="box-main">
+      <div class="firstHalf">
+        <h1 class="text-big" id="homework-2">
+          Homework 2: Animated Scene
+        </h1>
+        <p class="text-small">
+          This is where Homework 2: Animated Scene goes.
+        </p>
       </div>
-    </section>
-<section class="Homework-Section">
-  <div class="box-main">
-    <div class="firstHalf">
-      <h1 class="text-big" id="homework-2">
-        Homework 2
-      </h1>
-      <p class="text-small">
-        This is where Homework 2 goes.
-      </p>
     </div>
-  </div>
-</section>
-<section class="Homework-Section">
-  <div class="box-main">
-    <div class="firstHalf">
-      <h1 class="text-big" id="homework-2">
-        Homework 3
-      </h1>
-      <p class="text-small">
-        This is where Homework 3 goes.
-      </p>
+    <div class="hw-2-container">
+      <div id="myCanvasDIV">
+        <canvas id="myHw2Canvas" width="700" height="400" style="border:1px solid #000000"></canvas>
+      </div>
+      <style>
+        canvas {
+          border: 1px solid black;
+          background-image: url("background.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      </style>
+      <script>
+        var canvas = document.getElementById("myHw2Canvas");
+        var ctx = canvas.getContext("2d");
+
+        // load sprite images
+        var sprite1 = new Image();
+        sprite1.src = "Sprite1.png";
+
+        var sprite2 = new Image();
+        sprite2.src = "Sprite2.png";
+
+        // load chat bubble image
+        var chatBubble = new Image();
+        chatBubble.src = "chatbubble.png";
+
+        // set initial sprite coordinates
+        var x1 = -sprite1.width;
+        var y1 = canvas.height / 2 - sprite1.height / 2;
+
+        var x2 = canvas.width;
+        var y2 = canvas.height / 2 - sprite2.height / 2;
+
+        // set sprite velocities
+        var vel = 1.25;
+
+        // set chat bubble text
+        var chatBubble1Text = "I'm going to get you!";
+        var chatBubble2Text = "No!!";
+
+        // set animation loop
+        function animate() {
+          // clear canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // move sprites
+          x1 += vel;
+          x2 += vel;
+
+          // wrap around the canvas edges
+          if (x1 > canvas.width) {
+            x1 = -sprite1.width;
+          }
+          if (x2 > canvas.width) {
+            x2 = -sprite2.width + 150;
+          }
+
+          // update chat bubble positions
+          chatBubble1X = x1 + 75;
+          chatBubble1Y = y1 - 50;
+
+          chatBubble2X = x2 + 200;
+          chatBubble2Y = y2 - 50;
+
+          // draw sprites
+          ctx.drawImage(sprite1, x1, y1);
+          ctx.drawImage(sprite2, x2, y2);
+
+          // draw chat bubbles
+          ctx.drawImage(chatBubble, chatBubble1X, chatBubble1Y);
+          ctx.drawImage(chatBubble, chatBubble2X, chatBubble2Y);
+
+          // add chat bubble text
+          ctx.font = "12px Arial";
+          ctx.fillStyle = "black";
+          ctx.textAlign = "center";
+          ctx.fillText(chatBubble1Text, chatBubble1X + chatBubble.width / 2, chatBubble1Y + chatBubble.height / 2);
+          ctx.fillText(chatBubble2Text, chatBubble2X + chatBubble.width / 2, chatBubble2Y + chatBubble.height / 2);
+
+          // call animate again
+          requestAnimationFrame(animate);
+        }
+
+        // start animation
+        animate();
+      </script>
+  </section>
+  <section class="Homework-Section">
+    <div class="box-main">
+      <div class="firstHalf">
+        <h1 class="text-big" id="homework-3">
+          Homework 3
+        </h1>
+        <p class="text-small">
+          This is where Homework 3 goes.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
-<footer class="background">
-  <p class="text-footer">
-    Copyright @-All rights are reserved. But not really. Hehe
-  </p>
-</footer>
+  </section>
+  <footer class="background">
+    <p class="text-footer">
+      Copyright @-All rights are reserved. But not really. Hehe
+    </p>
+  </footer>
 </body>
+
 </html>

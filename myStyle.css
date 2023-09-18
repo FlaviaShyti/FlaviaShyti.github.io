@@ -1,117 +1,118 @@
 
-*{
+/* *{
   margin:0;
   padding:0;
   align-items: center;
-}
+} */
 
-.navbar{
+/* .navbar{
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
   top: 0;
   cursor: pointer;
-}
+} */
 
-.background{
+/* .background{
   background: #DCAE96;
   background-blend-mode: darken;
   background-size: cover;
-}
+} */
 
-.nav-list{
+/* .nav-list{
   display: flex;
   align-items: center;
-}
+} */
 
-.logo{
+/* .logo{
   display:inline-flex;
   justify-content:center;
   align-items: center;
   padding: 5px;
-}
+} */
 
-.logo img{
+/* .logo img{
   width: 110px;
   border-radius: 50px;
   align-items: center;
-}
+} */
 
-.nav-list li{
+/* .nav-list li{
   list-style: none;
   padding: 26px 30px;
-}
+} */
 
-.nav-list li a{
+/* .nav-list li a{
   text-decoration: none;
   color: white;
-}
+} */
 
-.nav-list li a:hover{
+/* .nav-list li a:hover{
   color: grey;
-}
+} */
 
-.Homework-Section{
+/* .Homework-Section{
   background-color:beige;
   height: 700px;
-}
-.box-main{
+} */
+/* .box-main{
   display: flex;
   justify-content: center;
   
-}
+} */
 
-.firsthalf{
+/* .firsthalf{
   width:100%;
   display:flex;
   flex-direction: column;
   justify-content:center;
-}
-#hw-1-canvas{
+} */
+/* #hw-1-canvas{
   display:block;
   margin: 0 auto;
-}
+} */
 
 
 
-.text-big{
+/* .text-big{
   font-family: 'Piazzolla', serif;
   font-weight: bold;
   font-size: 35px;
   padding-bottom:10px;
-}
+} */
 
-.text-small{
+/* .text-small{
   font-size: 18px;
   padding-bottom:10px;
-}
+} */
 
-.section-left{
+/* .section-left{
   flex-direction: row-reverse;
-}
+} */
 
-.center{
+/* .center{
   text-align: center;
-}
+} */
 
-.text-footer{
+/* .text-footer{
   text-align:center;
   padding: 30px 0;
   font-family: 'Ubuntu', sans-serif;
   display: flex;
   justify-content: center;
   color: black;
-}
+} */
 
 
-h1{text-align: center;}
-p{text-align: center;}
+/* h1{text-align: center;}
+p{text-align: center;} */
 
-#myCanvasDIV{
+/* #myCanvasDIV{
   text-align: center;
-}
+} */
 
-#myLab1CanvasDIV{
+/* #myLab1CanvasDIV{
   text-align: center;
-}
+} */
+

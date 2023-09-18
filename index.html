@@ -3,11 +3,188 @@
 
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
   <link rel="stylesheet" href="myStyle.css">
-  <title>
-    Flavia Shyti CISC3610
-  </title>
+  <title>Flavia Shyti CISC3610</title>
+  <style>
+    /* Add your global CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .background {
+      background: #DCAE96;
+      background-blend-mode: darken;
+      background-size: cover;
+      /* Define your background color */
+    }
+
+    .center {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+    }
+
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+
+    .logo img {
+      width: 110px;
+      border-radius: 50px;
+      align-items: center;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .Homework-Section {
+      background-color: beige;
+      height: 700px;
+      padding: 20px;
+    }
+
+    .box-main {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .firstHalf {
+      flex: 1;
+    }
+
+    .text-big {
+      font-family: 'Piazzolla', serif;
+      font-weight: bold;
+      font-size: 35px;
+      padding-bottom: 10px;
+    }
+
+    .text-small {
+      font-size: 16px;
+    }
+
+    /* Add your specific CSS styles for each section here */
+    .Homework-Section:nth-child(1) {
+      background-color: beige;
+      /* Change the background color for Homework 1 section */
+    }
+
+    .Homework-Section:nth-child(2) {
+      background-color: beige;
+      /* Change the background color for Homework 2 section */
+    }
+
+    .Homework-Section:nth-child(3) {
+      background-color: beige;
+      /* Change the background color for Homework 3 section */
+    }
+
+    .hw-1-container,
+    .hw-2-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .interest-calculator-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      background-image: url('interest-rate-background.jpg');
+      /* Replace 'your-image.jpg' with the path to your image */
+      background-size: 700px 600px;
+      /* Set the width and height of the background */
+      background-repeat: no-repeat;
+      /* Prevent the background image from repeating */
+      background-position: center;
+    }
+
+    /* Add your specific styles for each canvas here */
+    #myCanvas,
+    #myHw2Canvas {
+      border: 1px solid black;
+      background-image: url("background.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Add your specific styles for buttons, labels, and input fields here */
+    label {
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .text-footer {
+      text-align: center;
+      padding: 30px 0;
+      font-family: 'Ubuntu', sans-serif;
+      display: flex;
+      justify-content: center;
+      color: black;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,9 +206,7 @@
       </div>
     </div>
     <div class="hw-1-container">
-      <div id="myCanvasDIV">
-        <canvas id="myCanvas" width="700" height="400" style="border:1px solid #000000"></canvas>
-      </div>
+      <canvas id="myCanvas" width="700" height="400"></canvas>
       <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -41,6 +216,8 @@
         window.onload = function () {
           var canvas = document.getElementById("myCanvas");
           var context = canvas.getContext("2d");
+
+
 
 
           //drawing sun
@@ -61,32 +238,42 @@
 
 
 
+
+
+
+
           var startX = 200;
           var startY = 50;
+
 
           // draw cloud shape
           context.beginPath();
           context.moveTo(startX, startY);
           context.bezierCurveTo(startX - 40, startY + 20, startX - 40, startY + 70, startX + 60, startY + 70);//left most shape
           context.bezierCurveTo(startX + 80, startY + 100, startX + 150, startY + 100, startX + 170, startY + 70);//bottom center
-          context.bezierCurveTo(startX + 250, startY + 70, startX + 250, startY + 40, startX + 220, startY + 20);//bottom right 
+          context.bezierCurveTo(startX + 250, startY + 70, startX + 250, startY + 40, startX + 220, startY + 20);//bottom right
           context.bezierCurveTo(startX + 260, startY - 40, startX + 200, startY - 50, startX + 170, startY - 30);//top right
           context.bezierCurveTo(startX + 210, startY - 40, startX + 80, startY - 60, startX + 80, startY - 30);//top center
           context.bezierCurveTo(startX + 30, startY - 50, startX - 20, startY - 60, startX, startY);//top left
           context.closePath();
 
+
           context.fillStyle = "#FEFDFB";
           context.fill();
+
 
           context.lineWidth = 5;
           context.strokeStyle = "#FFFFFF";
           context.stroke();
 
 
+
+
           //Write text
           context.fillStyle = "purple";
           context.font = "20px Verdana";
           context.fillText("My First Cartoon", startX + 20, startY + 20);
+
 
           // Green floor
           context.beginPath();
@@ -98,6 +285,8 @@
           context.fill();
 
 
+
+
           //draw house outline
           context.beginPath();
           context.lineWidth = "4";
@@ -106,6 +295,7 @@
           context.rect(450, 120, 245, 230);
           context.stroke();
           context.fill();
+
 
           //draw roof
           context.beginPath();
@@ -118,6 +308,7 @@
           context.stroke();
           context.fill();
 
+
           //draw window
           context.beginPath();
           context.lineWidth = "4";
@@ -126,6 +317,8 @@
           context.rect(470, 150, 70, 70);
           context.stroke();
           context.fill();
+
+
 
 
           //draw window panes using for loop
@@ -148,6 +341,7 @@
             paneX += 30;
           }
 
+
           //Draw door
           context.beginPath();
           context.lineWidth = "4";
@@ -156,6 +350,7 @@
           context.rect(600, 199, 70, 150);
           context.stroke();
           context.fill();
+
 
           //draw door handle
           context.beginPath();
@@ -166,6 +361,7 @@
           context.fill();
           context.stroke();
 
+
           //cloud
           var startX = 0;
           var startY = 350;
@@ -175,14 +371,16 @@
               context.moveTo(startX, startY);
               context.bezierCurveTo(startX - 4, startY + 2, startX - 4, startY + 7, startX + 6, startY + 7);//left most shape
               context.bezierCurveTo(startX + 8, startY + 10, startX + 15, startY + 10, startX + 17, startY + 7);//bottom center
-              context.bezierCurveTo(startX + 25, startY + 7, startX + 25, startY + 4, startX + 22, startY + 2);//bottom right 
+              context.bezierCurveTo(startX + 25, startY + 7, startX + 25, startY + 4, startX + 22, startY + 2);//bottom right
               context.bezierCurveTo(startX + 26, startY - 4, startX + 20, startY - 5, startX + 17, startY - 3);//top right
               context.bezierCurveTo(startX + 21, startY - 4, startX + 8, startY - 6, startX + 8, startY - 3);//top center
               context.bezierCurveTo(startX + 3, startY - 5, startX - 2, startY - 6, startX, startY);//top left
               context.closePath();
 
+
               context.fillStyle = "#928e85";
               context.fill();
+
 
               context.lineWidth = 5;
               context.strokeStyle = "#FFFFFF";
@@ -193,6 +391,8 @@
             startY += 20;
           }
         };
+
+        // Rest of your canvas drawing code for Homework 1 here...
       </script>
     </div>
   </section>
@@ -208,54 +408,54 @@
       </div>
     </div>
     <div class="hw-2-container">
-      <div id="myCanvasDIV">
-        <canvas id="myHw2Canvas" width="700" height="400" style="border:1px solid #000000"></canvas>
-      </div>
-      <style>
-        canvas {
-          border: 1px solid black;
-          background-image: url("background.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-      </style>
+      <canvas id="myHw2Canvas" width="700" height="400"></canvas>
       <script>
         var canvas = document.getElementById("myHw2Canvas");
         var ctx = canvas.getContext("2d");
+
 
         // load sprite images
         var sprite1 = new Image();
         sprite1.src = "Sprite1.png";
 
+
         var sprite2 = new Image();
         sprite2.src = "Sprite2.png";
+
 
         // load chat bubble image
         var chatBubble = new Image();
         chatBubble.src = "chatbubble.png";
 
+
         // set initial sprite coordinates
         var x1 = -sprite1.width;
         var y1 = canvas.height / 2 - sprite1.height / 2;
 
+
         var x2 = canvas.width;
         var y2 = canvas.height / 2 - sprite2.height / 2;
+
 
         // set sprite velocities
         var vel = 1.5;
 
+
         // set chat bubble text
         var chatBubble1Text = "I'm going to get you!";
         var chatBubble2Text = "No!!";
+
 
         // set animation loop
         function animate() {
           // clear canvas
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+
           // move sprites
           x1 += vel;
           x2 += vel;
+
 
           // wrap around the canvas edges
           if (x1 > canvas.width) {
@@ -265,20 +465,25 @@
             x2 = -sprite2.width + 150;
           }
 
+
           // update chat bubble positions
           chatBubble1X = x1 + 75;
           chatBubble1Y = y1 - 50;
 
+
           chatBubble2X = x2 + 200;
           chatBubble2Y = y2 - 50;
+
 
           // draw sprites
           ctx.drawImage(sprite1, x1, y1);
           ctx.drawImage(sprite2, x2, y2);
 
+
           // draw chat bubbles
           ctx.drawImage(chatBubble, chatBubble1X, chatBubble1Y);
           ctx.drawImage(chatBubble, chatBubble2X, chatBubble2Y);
+
 
           // add chat bubble text
           ctx.font = "12px Arial";
@@ -287,13 +492,18 @@
           ctx.fillText(chatBubble1Text, chatBubble1X + chatBubble.width / 2, chatBubble1Y + chatBubble.height / 2);
           ctx.fillText(chatBubble2Text, chatBubble2X + chatBubble.width / 2, chatBubble2Y + chatBubble.height / 2);
 
+
           // call animate again
           requestAnimationFrame(animate);
         }
 
+
         // start animation
         animate();
+
+        // Rest of your canvas drawing code for Homework 2 here...
       </script>
+    </div>
   </section>
   <section class="Homework-Section">
     <div class="box-main">
@@ -306,6 +516,52 @@
         </p>
       </div>
     </div>
+    <div class="interest-calculator-container">
+      <label for="principal">Principal Amount:</label>
+      <input type="number" id="principal" placeholder="Enter principal amount" required><br><br>
+
+      <label>Interest Rate:</label><br>
+      <input type="radio" name="rate" value="5" required> 5%<br>
+      <input type="radio" name="rate" value="10"> 10%<br>
+      <input type="radio" name="rate" value="15"> 15%<br><br>
+
+      <label for="years">Number of Years:</label>
+      <input type="number" id="years" placeholder="Enter number of years" required><br><br>
+
+      <button type="button" onclick="calculateInterest()">Calculate</button>
+      <button type="button" onclick="clearData()">Reset</button>
+
+      <div id="result"></div>
+    </div>
+    <script>
+      // Function to calculate interest and display results
+      function calculateInterest() {
+        const principal = parseFloat(document.getElementById('principal').value);
+        const rate = parseFloat(document.querySelector('input[name="rate"]:checked').value);
+        const years = parseInt(document.getElementById('years').value);
+        const result = principal * Math.pow(1 + (rate / 100), years);
+
+        document.getElementById('result').textContent = `After ${years} years, your money will grow to $${result.toFixed(2)}`;
+
+        // Save the entered principal to local storage
+        localStorage.setItem('principal', principal);
+      }
+
+      // Function to clear data and reset form
+      function clearData() {
+        document.getElementById('principal').value = '';
+        document.querySelector('input[name="rate"]:checked').checked = false;
+        document.getElementById('years').value = '';
+        document.getElementById('result').textContent = '';
+        localStorage.removeItem('principal'); // Remove the saved principal from local storage
+      }
+
+      // Initialize the form with the saved principal value if it exists
+      const savedPrincipal = localStorage.getItem('principal');
+      if (savedPrincipal) {
+        document.getElementById('principal').value = savedPrincipal;
+      }
+    </script>
   </section>
   <footer class="background">
     <p class="text-footer">

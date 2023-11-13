@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="myStyle.css">
   <title>Flavia Shyti CISC3610</title>
   <style>
-    /* Add your global CSS styles here */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,7 +16,7 @@
       background: #DCAE96;
       background-blend-mode: darken;
       background-size: cover;
-      /* Define your background color */
+      /* Background color */
     }
 
     .center {
@@ -88,20 +87,20 @@
       font-size: 16px;
     }
 
-    /* Add your specific CSS styles for each section here */
+
     .Homework-Section:nth-child(1) {
       background-color: beige;
-      /* Change the background color for Homework 1 section */
+      /* Background color for Homework 1 section */
     }
 
     .Homework-Section:nth-child(2) {
       background-color: beige;
-      /* Change the background color for Homework 2 section */
+      /* Background color for Homework 2 section */
     }
 
     .Homework-Section:nth-child(3) {
       background-color: beige;
-      /* Change the background color for Homework 3 section */
+      /* Background color for Homework 3 section */
     }
 
     .hw-1-container,
@@ -111,7 +110,42 @@
       align-items: center;
       text-align: center;
       margin-top: 20px;
+      position: relative;
     }
+
+    .music-machine-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .canvas-container {
+      border: 5px solid black;
+      margin-bottom: 10px;
+      width: 700px;
+      height: 400px;
+    }
+
+    .music-machine-container button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #94C973;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: auto;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
 
     .interest-calculator-container {
       display: flex;
@@ -121,7 +155,6 @@
       text-align: center;
       height: 100%;
       background-image: url('interest-rate-background.jpg');
-      /* Replace 'your-image.jpg' with the path to your image */
       background-size: 700px 600px;
       /* Set the width and height of the background */
       background-repeat: no-repeat;
@@ -129,7 +162,7 @@
       background-position: center;
     }
 
-    /* Add your specific styles for each canvas here */
+    /* Specific styles for each canvas here */
     #myCanvas,
     #myHw2Canvas {
       border: 1px solid black;
@@ -138,7 +171,6 @@
       background-size: cover;
     }
 
-    /* Add your specific styles for buttons, labels, and input fields here */
     label {
       font-weight: bold;
     }
@@ -155,12 +187,14 @@
     }
 
     button {
+      margin: 5px;
       padding: 10px 20px;
-      background-color: #333;
+      background-color: #94C973;
       color: white;
       border: none;
       border-radius: 3px;
       cursor: pointer;
+
     }
 
     #result {
@@ -391,8 +425,6 @@
             startY += 20;
           }
         };
-
-        // Rest of your canvas drawing code for Homework 1 here...
       </script>
     </div>
   </section>
@@ -501,7 +533,6 @@
         // start animation
         animate();
 
-        // Rest of your canvas drawing code for Homework 2 here...
       </script>
     </div>
   </section>
@@ -562,6 +593,66 @@
         document.getElementById('principal').value = savedPrincipal;
       }
     </script>
+  </section>
+  <section class="Homework-Section">
+    <div class="box-main">
+      <div class="firstHalf">
+        <h1 class="text-big" id="music-section">
+          Music Machine
+        </h1>
+        <p class="text-small">
+          Click the buttons to play sounds!
+        </p>
+      </div>
+    </div>
+    <div class="music-machine-container">
+      <div class="canvas-container">
+        <!-- No canvas element here -->
+        <div class="button-container">
+          <button onclick="playAudio('sound1')">Monaco</button>
+          <audio id="sound1" class="audio" src="sound1.mp3"></audio>
+
+          <button onclick="playAudio('sound2')">Mast Magan</button>
+          <audio id="sound2" class="audio" src="sound2.mp3"></audio>
+
+          <button onclick="playAudio('sound3')">Enta Habibi</button>
+          <audio id="sound3" class="audio" src="sound3.mp3"></audio>
+
+          <button onclick="playAudio('sound4')">We Come From Napoli</button>
+          <audio id="sound4" class="audio" src="sound4.mp3"></audio>
+
+          <button onclick="playAudio('sound5')">Carolina</button>
+          <audio id="sound5" class="audio" src="sound5.mp3"></audio>
+        </div>
+      </div>
+      <script>
+        var audioElements = document.getElementsByClassName("audio");
+        var currentAudio;
+
+        function playAudio(soundId) {
+          // Find the audio element with the specified ID
+          var audio = document.getElementById(soundId);
+
+          // Toggle between playing and pausing the audio
+          if (audio) {
+            if (audio.paused) {
+              // Stop the currently playing audio (if any)
+              if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+              }
+
+              // Play the audio
+              audio.play();
+              currentAudio = audio; // Set the currently playing audio
+            } else {
+              // Pause the audio
+              audio.pause();
+            }
+          }
+        }
+      </script>
+    </div>
   </section>
   <footer class="background">
     <p class="text-footer">
